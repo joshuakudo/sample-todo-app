@@ -10,7 +10,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/signin" element={<Auth />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/app" element={<TodoApp />} />
+        <Route path="" element={<TodoApp />} />
         {/* Add more routes as needed */}
       </Routes>
     </Router>

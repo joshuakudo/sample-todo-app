@@ -4,7 +4,7 @@ import TaskList from '../TodoList'
 import axios from 'axios'
 
 const API = axios.create({
-  baseURL: "http://localhost:8080", // Replace with the actual base URL of your API
+  baseURL: "http://instalog.ph", // API URL for backend container
 });
 
 // API endpoints

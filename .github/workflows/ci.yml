@@ -54,8 +54,8 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 587
-          username: ${{ secrets.SMTP_USERNAME }}
-          password: ${{ secrets.SMTP_PASSWORD }}
+          username: monleonjoshuaa6516@gmail.com
+          password: nkku qoyc drav guic
           subject: "GitHub Actions: React App CI/CD Pipeline Status"
           body: |
             The CI/CD pipeline for your React app has been successfully completed.

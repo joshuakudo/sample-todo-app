@@ -63,5 +63,5 @@ jobs:
             - Repository: ${{ github.repository }}
             - Branch: ${{ github.ref_name }}
             - Commit: ${{ github.sha }}
-          to: ${{ secrets.RECIPIENT_EMAILS }}
-          from: ${{ secrets.SMTP_USERNAME }}
+          to: monleonjoshua00@gmail.com
+          from: monleonjoshuaa6516@gmail.com

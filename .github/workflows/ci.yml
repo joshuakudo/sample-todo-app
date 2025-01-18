@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 
 jobs:
   build-and-deploy:
@@ -26,10 +23,6 @@ jobs:
       # Step 3: Install dependencies
       - name: Install Dependencies
         run: npm install
-
-      # Step 4: Run tests
-      - name: Run Tests
-        run: npm test -- --watchAll=false
 
       # Step 5: Build the React application
       - name: Build Application

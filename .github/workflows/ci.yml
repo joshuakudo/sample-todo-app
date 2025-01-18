@@ -38,7 +38,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.TOKEN }}
 
       # Step 8: Build and push the Docker image
       - name: Build and Push Docker Image
@@ -63,5 +63,5 @@ jobs:
             - Repository: ${{ github.repository }}
             - Branch: ${{ github.ref_name }}
             - Commit: ${{ github.sha }}
-          to: ${{ secrets.RECIPIENT_EMAIL }}
+          to: ${{ secrets.RECIPIENT_EMAILS }}
           from: ${{ secrets.SENDER_EMAIL }}

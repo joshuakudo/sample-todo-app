@@ -8,6 +8,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: test
 
     steps:
       # Step 1: Checkout the repository
@@ -54,8 +55,8 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 587
-          username: monleonjoshuaa6516@gmail.com
-          password: nkku qoyc drav guic
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
           subject: "GitHub Actions: React App CI/CD Pipeline Status"
           body: |
             The CI/CD pipeline for your React app has been successfully completed.
@@ -63,5 +64,5 @@ jobs:
             - Repository: ${{ github.repository }}
             - Branch: ${{ github.ref_name }}
             - Commit: ${{ github.sha }}
-          to: monleonjoshua00@gmail.com
-          from: monleonjoshuaa6516@gmail.com
+          to: ${{ secrets.RECIPIENT_EMAILS }}
+          from: ${{ secrets.SMTP_USERNAME }}

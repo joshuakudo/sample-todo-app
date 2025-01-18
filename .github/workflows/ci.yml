@@ -64,4 +64,4 @@ jobs:
             - Branch: ${{ github.ref_name }}
             - Commit: ${{ github.sha }}
           to: ${{ secrets.RECIPIENT_EMAILS }}
-          from: ${{ secrets.SENDER_EMAIL }}
+          from: ${{ secrets.SMTP_USERNAME }}

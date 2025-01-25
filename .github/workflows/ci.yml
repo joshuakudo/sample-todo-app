@@ -62,12 +62,20 @@ jobs:
       # Step 10: Copy the build artifacts to the GitOps repo
       - name: Update GitOps Repository
         run: |
+          # Create the 'deploy' directory if it doesn't exist
+          mkdir -p gitops-repo/deploy
+    
+          # Copy the build artifacts to the GitOps repository
           cp -r build/* gitops-repo/deploy/
+    
+          # Navigate to the GitOps repository
           cd gitops-repo
+    
+          # Commit and push the changes
           git add .
           git commit -m "Deploy new frontend build"
           git push
-
+    
       # Step 11: Send Email Notification
       - name: Send Email Notification
         uses: dawidd6/action-send-mail@v3

@@ -53,6 +53,8 @@ jobs:
       - name: Checkout GitOps Repository
         uses: actions/checkout@v3
         with:
+          fetch-depth: 0
+          ref: 'master'
           repository: joshuakudo/fleet-infra
           token: ${{ secrets.GITHUB_TOKEN }}
           path: gitops-repo

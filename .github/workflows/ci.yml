@@ -75,7 +75,7 @@ jobs:
           git config --global user.email "monleonjoshua00@gmail.com"
           git config --global user.name "joshuakudo"
 
-          git remote set-url origin https://github-actions: https://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@github.com/joshuakudo/fleet-infra.git
+          git remote set-url origin https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/joshuakudo/fleet-infra.git
     
           # Commit and push the changes
           git add .

@@ -49,7 +49,24 @@ jobs:
           push: true
           tags: ghcr.io/${{ github.repository }}:latest
 
-      # Step 9: Send Email Notification
+      # Step 9: Checkout GitOps Repository
+      - name: Checkout GitOps Repository
+        uses: actions/checkout@v3
+        with:
+          repository: joshuakudo/fleet-infra
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: gitops-repo
+
+      # Step 10: Copy the build artifacts to the GitOps repo
+      - name: Update GitOps Repository
+        run: |
+          cp -r build/* gitops-repo/deploy/
+          cd gitops-repo
+          git add .
+          git commit -m "Deploy new frontend build"
+          git push
+
+      # Step 11: Send Email Notification
       - name: Send Email Notification
         uses: dawidd6/action-send-mail@v3
         with:

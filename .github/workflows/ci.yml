@@ -70,6 +70,10 @@ jobs:
     
           # Navigate to the GitOps repository
           cd gitops-repo
+
+          # Configure Git user for commit
+          git config --global user.email "monleonjoshua00@gmail.com"
+          git config --global user.name "joshuakudo"
     
           # Commit and push the changes
           git add .
